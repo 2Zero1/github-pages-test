@@ -20,6 +20,7 @@ jobs:
       #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Build
         run: |
+          mkdir out
           ls -la
           npm run build
           ls -la
