@@ -41,7 +41,6 @@ const builder = async () => {
     console.log('뭔데');
     writeFile(htmlFilePath, toHtmlDocument(contents));
     console.log('뭔데2');
-
   }
 
   writeIndexFile(keywords);
