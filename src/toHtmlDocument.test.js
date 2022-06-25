@@ -1,4 +1,4 @@
-const toHtmlDocument = require('./toHtmlDocument.js');
+const toHtmlDocument = require('./toHtmlDocument');
 
 test('toHtmlDocument', () => {
   expect(toHtmlDocument('<p>hello</p>')).toBe(`<!DOCTYPE html>
@@ -14,5 +14,5 @@ test('toHtmlDocument', () => {
       </main>
       <footer></footer>
     </body>
-  </html>`)
+  </html>`);
 });

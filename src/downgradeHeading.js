@@ -1,5 +1,3 @@
 const regex = /(# )/g;
 
-module.exports = (paragraph) => {
-  return paragraph.replace(regex,`## `);
-};
+module.exports = (paragraph) => paragraph.replace(regex, '## ');

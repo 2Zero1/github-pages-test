@@ -1,7 +1,6 @@
-const { parse } = require('marked')
+const { parse } = require('marked');
 
-module.exports = (contents) => {
-  return `<!DOCTYPE html>
+module.exports = (contents) => `<!DOCTYPE html>
   <html lang="ko">
     <head>
       <title>whiki</title>
@@ -15,4 +14,3 @@ module.exports = (contents) => {
       <footer></footer>
     </body>
   </html>`;
-};

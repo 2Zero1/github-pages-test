@@ -8,17 +8,15 @@ const downgradeHeading = require('./downgradeHeading');
 const contentsDirectoryPath = './contents';
 const outPath = './out';
 
-
 const toHtmlUl = (items) => `<ul>${items}</ul>`;
 const toHtmlLi = (item) => `<li>${item}</li>`;
 const toHtmlLink = (item) => `<a href="${item}.html">${item}</a>`;
 const markLink = (keyword) => toHtmlLi(toHtmlLink(keyword));
 
-
 const writeIndexFile = async (keywords) => {
   const links = Array.from(keywords).reduce((acc, cur) => acc + markLink(cur), '');
 
-  writeFile(`${outPath}/index.html`, toHtmlUl(links));
+  writeFile(`${outPath}/index.html`, toHtmlDocument(toHtmlUl(links)));
 };
 
 const builder = async () => {
@@ -26,8 +24,8 @@ const builder = async () => {
 
   const fileNames = await readdir(contentsDirectoryPath);
 
+  /* eslint-disable-next-line */
   for await (const fileName of fileNames) {
-    
     const paragraph = await readFile(`${contentsDirectoryPath}/${fileName}`, 'utf8');
 
     const contents = transfile(downgradeHeading(paragraph));
@@ -37,15 +35,10 @@ const builder = async () => {
     const htmlFilePath = `${outPath}/${keyword}.html`;
 
     keywords.add(keyword);
-    console.log(htmlFilePath);
-    console.log('뭔데');
     writeFile(htmlFilePath, toHtmlDocument(contents));
-    console.log('뭔데2');
   }
 
   writeIndexFile(keywords);
-}
-
-
+};
 
 builder();
