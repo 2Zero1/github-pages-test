@@ -1,0 +1,27 @@
+{
+  "name": "whiki-seedwhale",
+  "version": "1.0.0",
+  "description": "시드웨일 위키!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/builder.js",
+    "build": "node src/builder.js",
+    "watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2Zero1/whiki-seedwhale.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2Zero1/whiki-seedwhale/issues"
+  },
+  "homepage": "https://github.com/2Zero1/whiki-seedwhale#readme",
+  "dependencies": {
+    "@types/jest": "^28.1.3",
+    "jest": "^28.1.1",
+    "marked": "^4.0.17"
+  }
+}
