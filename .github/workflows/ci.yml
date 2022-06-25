@@ -20,8 +20,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Build
         run: |
+          ls -la
           npm run build
-          console.log('실행 완료');
           ls -la
           cp out/*
       - name: Deploy
