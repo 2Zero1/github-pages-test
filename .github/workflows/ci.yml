@@ -24,7 +24,7 @@ jobs:
           ls -la
           npm run build
           ls -la
-          cp out/*
+          cp -r out/*
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
