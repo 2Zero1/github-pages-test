@@ -20,6 +20,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Build
         run: |
+          mkdir out
           npm run build
           cp dist/index.html dist/404.html
       - name: Deploy
