@@ -37,8 +37,10 @@ const builder = async () => {
     const htmlFilePath = `${outPath}/${keyword}.html`;
 
     keywords.add(keyword);
-
+    console.log('뭔데');
     writeFile(htmlFilePath, toHtmlDocument(contents));
+    console.log('뭔데2');
+
   }
 
   writeIndexFile(keywords);
